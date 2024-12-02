@@ -1,6 +1,6 @@
 package dev.janku.katas.day1.challenge2
 
-import dev.janku.katas.day1.CommonCompanion
+import dev.janku.katas.day1.Day1ChallengeUtils
 
 class ListSimilarity {
     companion object {
@@ -17,7 +17,7 @@ class ListSimilarity {
 }
 
 fun main() {
-    val (list1, list2) = CommonCompanion.readInputFile("day1-challenge1-input.txt")
+    val (list1, list2) = Day1ChallengeUtils.readInputFile("day1-challenge1-input.txt")
     val result = ListSimilarity.totalSimilarity(list1, list2)
     println("Total similarity: $result")
 }

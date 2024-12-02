@@ -1,5 +1,6 @@
 package day1.challenge1
 
+import dev.janku.katas.day1.Day1ChallengeUtils
 import dev.janku.katas.day1.challenge1.ListsTotalDistance
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -36,7 +37,7 @@ class ListsTotalDistanceTest {
         val expectedList1 = listOf(77442, 71181, 49755)
         val expectedList2 = listOf(88154, 76363, 69158)
 
-        val result : Pair<List<Int>, List<Int>> = ListsTotalDistance.readInputFile("day1-challenge1-input-test.txt")
+        val result : Pair<List<Int>, List<Int>> = Day1ChallengeUtils.readInputFile("day1-challenge1-input-test.txt")
         assertEquals(expectedList1, result.first)
         assertEquals(expectedList2, result.second)
     }

@@ -2,7 +2,7 @@ package dev.janku.katas.day1
 
 import dev.janku.katas.utils.ResourcesUtils
 
-class CommonCompanion {
+class Day1ChallengeUtils {
     companion object {
         fun readInputFile(fileName: String): Pair<List<Int>, List<Int>> {
             return ResourcesUtils.getResourceAsLinesStream(fileName).use {
