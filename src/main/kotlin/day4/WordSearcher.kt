@@ -127,12 +127,15 @@ class MatrixWords (val matrix: Array<CharArray>, val height: Int, val width: Int
         return Pair(diagonal1, diagonal2)
     }
 
+    private lateinit var wordBidirectionalPatternCache : Regex
     /**
      * Returns a regex pattern that matches the word and its reverse
-     * FIXME: could be optimized to use a single regex pattern instance !
      */
     private fun getWordBidirectionalPatter(word: String) : Regex {
-        return Regex("(${word}|${word.reversed()})")
+        if (! ::wordBidirectionalPatternCache.isInitialized) {
+            wordBidirectionalPatternCache = Regex("(${word}|${word.reversed()})")
+        }
+        return wordBidirectionalPatternCache
     }
 
     /**
