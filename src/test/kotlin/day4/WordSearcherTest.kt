@@ -191,4 +191,42 @@ class WordSearcherTest {
         """.trimIndent()
         assertEquals(3, WordSearcher.countWord(input, "XMAS"))
     }
+
+    @Test
+    fun `simple cross word of X`() {
+        val input = """
+            ...
+            .X.
+            ...
+        """.trimIndent()
+        assertEquals(1, WordSearcher.countCrossesOfWords(input, "X"))
+    }
+
+    @Test
+    fun `simple cross word of MAS`() {
+        val input = """
+            M.S
+            .A.
+            M.S
+        """.trimIndent()
+        assertEquals(1, WordSearcher.countCrossesOfWords(input, "MAS"))
+    }
+
+
+    @Test
+    fun `example input - the x-mas challenge (X made of 2 MAS words)`() {
+        val input = """
+            .M.S......
+            ..A..MSMS.
+            .M.S.MAA..
+            ..A.ASMSM.
+            .M.S.M....
+            ..........
+            S.S.S.S.S.
+            .A.A.A.A..
+            M.M.M.M.M.
+            ..........
+        """.trimIndent()
+        assertEquals(9, WordSearcher.countCrossesOfWords(input, "MAS"))
+    }
 }

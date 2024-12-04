@@ -1,6 +1,5 @@
 package dev.janku.katas.day4
 
-import dev.janku.katas.day3.CorruptedMemoryMultiplier
 import dev.janku.katas.utils.ResourcesUtils
 
 data class Coordinates(val row: Int, val column: Int)
@@ -114,6 +113,28 @@ class MatrixWords (val matrix: Array<CharArray>, val height: Int, val width: Int
         ::checkLeft
     )
 
+    private fun getDiagonalWordsAt(word: String, coords: Coordinates) : Pair<String, String> {
+        // guard if the word with the center at coords is not possible
+        if (word.isEmpty() ||
+            coords.row - word.length/2 + 1 < 0 || coords.row + word.length/2 > height ||
+            coords.column - word.length/2 + 1 < 0 || coords.column + word.length/2 > width) {
+            return Pair("", "")
+        }
+
+        val diagonal1 = (0 until word.length).map { i -> matrix[coords.row - word.length/2 + i][coords.column - word.length/2 + i] }.joinToString("")
+        val diagonal2 = (0 until word.length).map { i -> matrix[coords.row + word.length/2 - i][coords.column - word.length/2 + i] }.joinToString("")
+
+        return Pair(diagonal1, diagonal2)
+    }
+
+    /**
+     * Returns a regex pattern that matches the word and its reverse
+     * FIXME: could be optimized to use a single regex pattern instance !
+     */
+    private fun getWordBidirectionalPatter(word: String) : Regex {
+        return Regex("(${word}|${word.reversed()})")
+    }
+
     /**
      * Count of the word in all directions from the given coordinates
      */
@@ -125,7 +146,23 @@ class MatrixWords (val matrix: Array<CharArray>, val height: Int, val width: Int
         // count true checks (a check for each direction)
         return when (word.length) {
             1 -> matrix[coords.row][coords.column].let { if (it == word[0]) 1 else 0 }
-            else -> directionalCheckers.map { it(word, coords) }.count { it }
+            else -> directionalCheckers.count { it(word, coords) }
+        }
+    }
+
+    fun countCrossesOfWordsAt(word: String, coords: Coordinates) : Int {
+        // guard
+        if (word.isEmpty() || coords.row < 0 || coords.row >= height || coords.column < 0 || coords.column >= width) {
+            return 0
+        }
+        // count true checks (a check for each direction)
+        return when (word.length) {
+            1 -> matrix[coords.row][coords.column].let { if (it == word[0]) 1 else 0 }
+            else -> {
+                val matchPattern = getWordBidirectionalPatter(word)
+                val (diagonal1, diagonal2) = getDiagonalWordsAt(word, coords)
+                return if (matchPattern.matches((diagonal1)) && matchPattern.matches(diagonal2)) 1 else 0
+            }
         }
     }
 }
@@ -134,10 +171,31 @@ class WordSearcher {
     companion object {
         fun countWord(input: String, word: String): Int {
             val matrixWords = MatrixWords.fromString(input)
-            return (0..matrixWords.height).flatMap {
-                i -> (0..matrixWords.width).map { j -> i to j }
+            return (0..matrixWords.height - 1).flatMap {
+                i -> (0..matrixWords.width - 1).map { j -> i to j }
             }.map {
                 (i, j) -> matrixWords.countWordsAt(word, Coordinates(i, j))
+            }.sum()
+        }
+
+        fun countCrossesOfWords(input: String, word: String): Int {
+            //guard - to form a cross the word must be odd characters to have a middle one
+            if (word.length % 2 == 0) {
+                throw IllegalArgumentException("The supplied word '${word}' must have an odd number of characters")
+            }
+
+            // heuristically start from the middle of the word with the rest as boundary window
+            // - find the center of the word
+            // - extract 2 diagonal strings with the center character of length of word
+            // - match the diagonal strings with the word in both directions (regular, reverse)
+
+            val wordMiddleIdx = word.length / 2
+
+            val matrixWords = MatrixWords.fromString(input)
+            return (wordMiddleIdx..matrixWords.height - wordMiddleIdx - 1).flatMap {
+                i -> (wordMiddleIdx..matrixWords.width - wordMiddleIdx - 1).map { j -> i to j }
+            }.map {
+                (i, j) -> matrixWords.countCrossesOfWordsAt(word, Coordinates(i, j))
             }.sum()
         }
     }
@@ -149,5 +207,7 @@ fun main() {
     }.get()
     val searchWord = "XMAS"
     println("XMAS found ${WordSearcher.countWord(input, searchWord)} times")
+    val searchCrossWord = "MAS"
+    println("X-MAS crosses found ${WordSearcher.countCrossesOfWords(input, searchCrossWord)} times")
 
 }
