@@ -1,4 +1,4 @@
-package day1.challenge2
+package dev.janku.katas.day1.challenge2
 
 import dev.janku.katas.day1.challenge2.ListSimilarity
 import kotlin.test.Test

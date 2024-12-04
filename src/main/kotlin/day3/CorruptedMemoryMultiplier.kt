@@ -93,7 +93,7 @@ class CorruptedMemoryMultiplier {
 fun main() {
     val memory = ResourcesUtils.getResourceAsLinesStream("day3-challenge-input.txt").reduce {
         acc, line -> "$acc\n$line"
-    }.toString()
+    }.get()
     println("Basic: ${CorruptedMemoryMultiplier.execInstructionSet(memory)}")
     println("Extended: ${CorruptedMemoryMultiplier.execInstructionSetExt(memory)}")
 }

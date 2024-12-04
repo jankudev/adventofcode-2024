@@ -1,4 +1,4 @@
-package day1.challenge1
+package dev.janku.katas.day1.challenge1
 
 import dev.janku.katas.day1.Day1ChallengeUtils
 import dev.janku.katas.day1.challenge1.ListsTotalDistance

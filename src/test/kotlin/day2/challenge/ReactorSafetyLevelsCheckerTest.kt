@@ -1,4 +1,4 @@
-package day2.challenge
+package dev.janku.katas.day2.challenge
 
 import dev.janku.katas.day2.ReactorSafetyLevelsChecker
 import org.junit.jupiter.api.Test
