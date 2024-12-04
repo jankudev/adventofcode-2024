@@ -14,7 +14,7 @@ class WordSearcherTest {
             .X....
         """.trimIndent()
 
-        assertEquals(4, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(4, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -32,7 +32,7 @@ class WordSearcherTest {
             .X.X.XMASX
         """.trimIndent()
 
-        assertEquals(18, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(18, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -50,7 +50,7 @@ class WordSearcherTest {
             MXMXAXMASX
         """.trimIndent()
 
-        assertEquals(18, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(18, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -81,7 +81,7 @@ class WordSearcherTest {
             AAA
         """.trimIndent()
 
-        assertEquals(5, WordSearcher.countWord(input, "A"))
+        assertEquals(5, WordSearcher(MatrixWords.fromString(input)).countWord(input, "A"))
     }
 
     @Test
@@ -93,7 +93,7 @@ class WordSearcherTest {
             XMASX
         """.trimIndent()
 
-        assertEquals(2, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(2, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -105,7 +105,7 @@ class WordSearcherTest {
             SXXSM
         """.trimIndent()
 
-        assertEquals(2, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(2, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -117,7 +117,7 @@ class WordSearcherTest {
             XXXXX
         """.trimIndent()
 
-        assertEquals(1, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(1, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -129,7 +129,7 @@ class WordSearcherTest {
             XXXMX
         """.trimIndent()
 
-        assertEquals(2, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(2, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -141,7 +141,7 @@ class WordSearcherTest {
             XXXXX
         """.trimIndent()
 
-        assertEquals(1, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(1, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -153,7 +153,7 @@ class WordSearcherTest {
             XXXXX
         """.trimIndent()
 
-        assertEquals(2, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(2, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -165,7 +165,7 @@ class WordSearcherTest {
             XXXSX
         """.trimIndent()
 
-        assertEquals(1, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(1, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -177,7 +177,7 @@ class WordSearcherTest {
             SXXXX
         """.trimIndent()
 
-        assertEquals(1, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(1, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -189,7 +189,7 @@ class WordSearcherTest {
             .............................A.......................XMAS
             ..............................S.........................X
         """.trimIndent()
-        assertEquals(3, WordSearcher.countWord(input, "XMAS"))
+        assertEquals(3, WordSearcher(MatrixWords.fromString(input)).countWord(input, "XMAS"))
     }
 
     @Test
@@ -199,7 +199,7 @@ class WordSearcherTest {
             .X.
             ...
         """.trimIndent()
-        assertEquals(1, WordSearcher.countCrossesOfWords(input, "X"))
+        assertEquals(1, WordSearcher(MatrixWords.fromString(input)).countCrossesOfWords(input, "X"))
     }
 
     @Test
@@ -209,7 +209,7 @@ class WordSearcherTest {
             .A.
             M.S
         """.trimIndent()
-        assertEquals(1, WordSearcher.countCrossesOfWords(input, "MAS"))
+        assertEquals(1, WordSearcher(MatrixWords.fromString(input)).countCrossesOfWords(input, "MAS"))
     }
 
 
@@ -227,6 +227,6 @@ class WordSearcherTest {
             M.M.M.M.M.
             ..........
         """.trimIndent()
-        assertEquals(9, WordSearcher.countCrossesOfWords(input, "MAS"))
+        assertEquals(9, WordSearcher(MatrixWords.fromString(input)).countCrossesOfWords(input, "MAS"))
     }
 }
