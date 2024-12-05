@@ -13,4 +13,5 @@ Using the challenge to learn Kotlin as I had no experience with it.
 - [Day 02 - Red-Noses Report](src/main/kotlin/day2/README.md)
 - [Day 03 - Mull it Over](src/main/kotlin/day3/README.md)
 - [Day 04 - Ceres Search](src/main/kotlin/day4/README.md)
+- [Day 05 - Print Queue](src/main/kotlin/day5/README.md)
 
