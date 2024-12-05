@@ -131,4 +131,4 @@ but creates a comparator to check/sort from the rules directly. For "repairing" 
 of the BubbleSort algorithm, but later on went with standard collections sort and a comparator function.
 
 Ultimately the Floyd-Warshall would be a better solution for the 1st part but it lacks the capability for the repair :-)
-(maybe next time)
+(attempt 5 - aka "attemptFloydWarshal")
