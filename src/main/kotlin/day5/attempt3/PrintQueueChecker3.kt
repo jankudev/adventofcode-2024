@@ -1,6 +1,5 @@
 package dev.janku.katas.day5.attempt3
 
-import dev.janku.katas.day5.attempt2.RulesParser
 import dev.janku.katas.utils.ResourcesUtils
 
 typealias Rule = Pair<Int, Int>
@@ -51,10 +50,18 @@ class PrintQueueChecker3(val rules: List<Rule>, val printQueues: List<PrintQueue
         return mutableList.toList()
     }
 
-    fun bubbleSort_largerThan(a: Int, b: Int) : Boolean {
+    fun bubbleSort_lowerThan(a: Int, b: Int) : Boolean {
         return rules.filter { it.second == b }.map { it.first }.contains(a)
                 ||
                 !rules.filter { it.second == a }.map { it.first }.contains(b)
+    }
+
+    fun bubbleSort_comparator(a: Int, b: Int) :  Int {
+        return when {
+                a == b -> 0
+                bubbleSort_lowerThan(a, b) -> -1
+                else -> 1
+        }
     }
 
     fun bubbleSort(queue: List<Int>) : List<Int> {
@@ -62,7 +69,7 @@ class PrintQueueChecker3(val rules: List<Rule>, val printQueues: List<PrintQueue
         val n = ml.size
         for (i in 0 until n - 1) {
             for (j in 0 until n - i - 1) {
-                if (bubbleSort_largerThan(ml[j], ml[j + 1])) {
+                if (bubbleSort_lowerThan(ml[j], ml[j + 1])) {
                     // Swap elements
                     val temp = ml[j]
                     ml[j] = ml[j + 1]
@@ -81,7 +88,8 @@ class PrintQueueChecker3(val rules: List<Rule>, val printQueues: List<PrintQueue
     fun sumMiddleElemOfAllBadQueuesAfterReordering() : Int {
         return printQueues.filterNot(::isOrdered)
 //            .map { repairQueue(it) }
-            .map { bubbleSort(it) }
+//            .map { bubbleSort(it) }
+            .map { it.sortedWith(::bubbleSort_comparator) }
             .map { it.get(it.size/2) }.sum()
     }
 }
