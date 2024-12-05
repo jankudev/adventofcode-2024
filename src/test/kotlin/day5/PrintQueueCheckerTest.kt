@@ -5,6 +5,7 @@ import dev.janku.katas.day5.attempt1.model.Rules
 import dev.janku.katas.day5.attempt2.PrintQueueChecker2
 import dev.janku.katas.day5.attempt2.RulesParser
 import dev.janku.katas.day5.attempt3.PrintQueueChecker3
+import dev.janku.katas.day5.attemptBellmanFord.PrintQueueCheckerFloydWarshall
 import org.junit.jupiter.api.assertTimeoutPreemptively
 import java.time.Duration
 import kotlin.test.Test
@@ -208,5 +209,50 @@ class PrintQueueCheckerTest {
 
         assertEquals(143, checker.sumMiddleElemOfAllGoodQueues())
         assertEquals(123, checker.sumMiddleElemOfAllBadQueuesAfterReordering())
+    }
+
+    /* Attempt 4 - Floyd Warshall */
+    @Test
+    fun `example input - checks with alternative with Floyd-Warshall`() {
+        val input = """
+            47|53
+            97|13
+            97|61
+            97|47
+            75|29
+            61|13
+            75|53
+            29|13
+            97|29
+            53|29
+            61|53
+            97|53
+            61|29
+            47|13
+            75|47
+            97|75
+            47|61
+            75|61
+            47|29
+            75|13
+            53|13
+
+            75,47,61,53,29
+            97,61,53,29,13
+            75,29,13
+            75,97,47,61,53
+            61,13,29
+            97,13,75,29,47
+        """.trimIndent()
+
+        val checker = PrintQueueCheckerFloydWarshall.fromInput(input)
+        assertTrue(checker.isOrdered(checker.printQueues[0]), "First queue should be valid")
+        assertTrue(checker.isOrdered(checker.printQueues[1]), "Second queue should be valid")
+        assertTrue(checker.isOrdered(checker.printQueues[2]), "Third queue should be valid")
+        assertFalse(checker.isOrdered(checker.printQueues[3]), "Fourth queue should be invalid")
+        assertFalse(checker.isOrdered(checker.printQueues[4]), "Fifth queue should be invalid")
+        assertFalse(checker.isOrdered(checker.printQueues[5]), "Sixth queue should be invalid")
+
+        assertEquals(143, checker.sumMiddleElemOfAllGoodQueues())
     }
 }

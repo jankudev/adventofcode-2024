@@ -84,7 +84,7 @@ To determine if the following numbers A,B are in the correct order (B larger tha
 
 Two ideas come to mind:
 - (selected) for each number recursively find all reachable nodes by recursion
-- create a representation of the graph and use Bellman-Ford algorithm to find the distance between all vertices,
+- create a representation of the graph and use Floyd-Warshall algorithm to find the distance between all vertices,
 
 The recursive search could be optimized by dynamic programming technique (caching and reusing results).
 
@@ -130,5 +130,5 @@ The attempt3 should be fundamentally correct with the given limitations as it do
 but creates a comparator to check/sort from the rules directly. For "repairing" the queue I've first used a variation
 of the BubbleSort algorithm, but later on went with standard collections sort and a comparator function.
 
-Ultimately the Bellman-Ford would be a better solution for the 1st part but it lacks the capability for the repair :-)
+Ultimately the Floyd-Warshall would be a better solution for the 1st part but it lacks the capability for the repair :-)
 (maybe next time)
