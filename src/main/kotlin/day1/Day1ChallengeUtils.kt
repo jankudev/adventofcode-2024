@@ -1,6 +1,6 @@
-package dev.janku.katas.day1
+package dev.janku.katas.aoc2024.day1
 
-import dev.janku.katas.utils.ResourcesUtils
+import dev.janku.katas.aoc2024.utils.ResourcesUtils
 
 class Day1ChallengeUtils {
     companion object {

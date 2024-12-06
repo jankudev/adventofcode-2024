@@ -1,4 +1,4 @@
-package dev.janku.katas.day4
+package dev.janku.katas.aoc2024.day4
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

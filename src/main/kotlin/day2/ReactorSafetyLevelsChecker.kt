@@ -1,6 +1,6 @@
-package dev.janku.katas.day2
+package dev.janku.katas.aoc2024.day2
 
-import dev.janku.katas.utils.ResourcesUtils
+import dev.janku.katas.aoc2024.utils.ResourcesUtils
 import kotlin.math.abs
 
 class ReactorSafetyLevelsChecker {

@@ -1,6 +1,6 @@
-package dev.janku.katas.day4
+package dev.janku.katas.aoc2024.day4
 
-import dev.janku.katas.utils.ResourcesUtils
+import dev.janku.katas.aoc2024.utils.ResourcesUtils
 
 data class Coordinates(val row: Int, val column: Int)
 

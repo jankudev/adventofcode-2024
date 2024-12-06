@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "2.0.21"
 }
 
-group = "dev.janku.katas"
+group = "dev.janku.katas.aoc2024"
 version = "1.0-SNAPSHOT"
 
 repositories {

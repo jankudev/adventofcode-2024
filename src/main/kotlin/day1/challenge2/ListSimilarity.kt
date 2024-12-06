@@ -1,6 +1,6 @@
-package dev.janku.katas.day1.challenge2
+package dev.janku.katas.aoc2024.day1.challenge2
 
-import dev.janku.katas.day1.Day1ChallengeUtils
+import dev.janku.katas.aoc2024.day1.Day1ChallengeUtils
 
 class ListSimilarity {
     companion object {

@@ -1,4 +1,4 @@
-package dev.janku.katas.day5.attempt1.model
+package dev.janku.katas.aoc2024.day5.attempt1.model
 
 typealias Rule = Pair<Int, Int>
 

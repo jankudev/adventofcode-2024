@@ -1,11 +1,11 @@
-package dev.janku.katas.day5
+package dev.janku.katas.aoc2024.day5
 
-import dev.janku.katas.day5.attempt1.PrintQueueChecker
-import dev.janku.katas.day5.attempt1.model.Rules
-import dev.janku.katas.day5.attempt2.PrintQueueChecker2
-import dev.janku.katas.day5.attempt2.RulesParser
-import dev.janku.katas.day5.attempt3.PrintQueueChecker3
-import dev.janku.katas.day5.attemptBellmanFord.PrintQueueCheckerFloydWarshall
+import dev.janku.katas.aoc2024.day5.attempt1.PrintQueueChecker
+import dev.janku.katas.aoc2024.day5.attempt1.model.Rules
+import dev.janku.katas.aoc2024.day5.attempt2.PrintQueueChecker2
+import dev.janku.katas.aoc2024.day5.attempt2.RulesParser
+import dev.janku.katas.aoc2024.day5.attempt3.PrintQueueChecker3
+import dev.janku.katas.aoc2024.day5.attemptBellmanFord.PrintQueueCheckerFloydWarshall
 import org.junit.jupiter.api.assertTimeoutPreemptively
 import java.time.Duration
 import kotlin.test.Test

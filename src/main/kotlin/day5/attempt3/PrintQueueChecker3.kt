@@ -1,6 +1,6 @@
-package dev.janku.katas.day5.attempt3
+package dev.janku.katas.aoc2024.day5.attempt3
 
-import dev.janku.katas.utils.ResourcesUtils
+import dev.janku.katas.aoc2024.utils.ResourcesUtils
 
 typealias Rule = Pair<Int, Int>
 typealias PrintQueue = List<Int>

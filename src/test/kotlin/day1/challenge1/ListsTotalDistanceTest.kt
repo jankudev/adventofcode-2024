@@ -1,7 +1,7 @@
-package dev.janku.katas.day1.challenge1
+package dev.janku.katas.aoc2024.day1.challenge1
 
-import dev.janku.katas.day1.Day1ChallengeUtils
-import dev.janku.katas.day1.challenge1.ListsTotalDistance
+import dev.janku.katas.aoc2024.day1.Day1ChallengeUtils
+import dev.janku.katas.aoc2024.day1.challenge1.ListsTotalDistance
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

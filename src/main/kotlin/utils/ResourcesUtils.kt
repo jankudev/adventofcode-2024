@@ -1,4 +1,4 @@
-package dev.janku.katas.utils
+package dev.janku.katas.aoc2024.utils
 
 import java.io.File
 import java.io.FileNotFoundException

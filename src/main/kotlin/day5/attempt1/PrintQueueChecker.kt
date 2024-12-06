@@ -1,9 +1,9 @@
-package dev.janku.katas.day5.attempt1
+package dev.janku.katas.aoc2024.day5.attempt1
 
-import dev.janku.katas.day5.attempt1.model.Queue
-import dev.janku.katas.day5.attempt1.model.Queues
-import dev.janku.katas.day5.attempt1.model.Rules
-import dev.janku.katas.utils.ResourcesUtils
+import dev.janku.katas.aoc2024.day5.attempt1.model.Queue
+import dev.janku.katas.aoc2024.day5.attempt1.model.Queues
+import dev.janku.katas.aoc2024.day5.attempt1.model.Rules
+import dev.janku.katas.aoc2024.utils.ResourcesUtils
 
 class PrintQueueChecker (val rules: Rules, val queues: Queues) {
 

@@ -1,6 +1,6 @@
-package dev.janku.katas.day3
+package dev.janku.katas.aoc2024.day3
 
-import dev.janku.katas.utils.ResourcesUtils
+import dev.janku.katas.aoc2024.utils.ResourcesUtils
 
 class CorruptedMemoryMultiplier {
     /**

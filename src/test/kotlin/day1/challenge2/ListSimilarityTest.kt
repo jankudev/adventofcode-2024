@@ -1,6 +1,6 @@
-package dev.janku.katas.day1.challenge2
+package dev.janku.katas.aoc2024.day1.challenge2
 
-import dev.janku.katas.day1.challenge2.ListSimilarity
+import dev.janku.katas.aoc2024.day1.challenge2.ListSimilarity
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
