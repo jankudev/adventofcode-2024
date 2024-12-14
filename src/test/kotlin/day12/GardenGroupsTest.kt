@@ -150,8 +150,25 @@ class GardenGroupsTest {
             AAABBA
             ABBAAA
             ABBAAA
-            AAAAAA
+            AAAAAA 
         """.trimIndent()
         assertEquals(368, GardenGroups.fencePrice(input, true))
+    }
+
+    @Test
+    fun `example data - part 2 example 4`() {
+        val input = """
+            RRRRIICCFF
+            RRRRIICCCF
+            VVRRRCCFFF
+            VVRCCCJFFF
+            VVVVCJJCFE
+            VVIVCCJJEE
+            VVIIICJJEE
+            MIIIIIJJEE
+            MIIISIJEEE
+            MMMISSJEEE
+        """.trimIndent()
+        assertEquals(1206, GardenGroups.fencePrice(input, true))
     }
 }
