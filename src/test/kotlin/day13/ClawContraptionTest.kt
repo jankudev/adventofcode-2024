@@ -27,10 +27,12 @@ class ClawContraptionTest {
             Prize: X=8400, Y=5400
         """.trimIndent()
 
-        val movements = ClawContraption.findCheapestMovements(input)
+        val (btnA, btnB, prize) = input.split("\n")
+
+        val movements = ClawContraption.findCheapestMovements(btnA, btnB, prize, false)
         val price = ClawContraption.calculatePrice(movements)
 
-        assertEquals(Pair(80, 40), movements)
+        assertEquals(Pair(80L, 40L), movements)
         assertEquals(280, price)
     }
 
@@ -42,7 +44,9 @@ class ClawContraptionTest {
             Prize: X=12748, Y=12176
         """.trimIndent()
 
-        val movements = ClawContraption.findCheapestMovements(input)
+        val (btnA, btnB, prize) = input.split("\n")
+
+        val movements = ClawContraption.findCheapestMovements(btnA, btnB, prize, false)
 
         assertEquals(ClawContraption.NO_VIABLE_MOVEMENT, movements)
     }
@@ -55,10 +59,12 @@ class ClawContraptionTest {
             Prize: X=7870, Y=6450
         """.trimIndent()
 
-        val movements = ClawContraption.findCheapestMovements(input)
+        val (btnA, btnB, prize) = input.split("\n")
+
+        val movements = ClawContraption.findCheapestMovements(btnA, btnB, prize, false)
         val price = ClawContraption.calculatePrice(movements)
 
-        assertEquals(Pair(38, 86), movements)
+        assertEquals(Pair(38L, 86L), movements)
         assertEquals(200, price)
     }
 
@@ -70,7 +76,9 @@ class ClawContraptionTest {
             Prize: X=18641, Y=10279
         """.trimIndent()
 
-        val movements = ClawContraption.findCheapestMovements(input)
+        val (btnA, btnB, prize) = input.split("\n")
+
+        val movements = ClawContraption.findCheapestMovements(btnA, btnB, prize, false)
 
         assertEquals(ClawContraption.NO_VIABLE_MOVEMENT, movements)
     }
